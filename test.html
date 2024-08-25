@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mitochondrion Diagram</title>
+  <style>
+    /* Styles for the mitochondrion */
+    .mitochondrion {
+      width: 50vw; /* Adjust width relative to viewport width */
+      height: auto; /* Auto height to maintain aspect ratio */
+      aspect-ratio: 2 / 1; /* Maintain 2:1 aspect ratio */
+      border: 1px solid black;
+      border-radius: 50%;
+      position: relative;
+      margin-right: 60px; /* Space between the mitochondrion and image */
+    }
+
+    .outer-membrane {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .inner-membrane {
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 60%;
+      height: 40%;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .cristae {
+      position: absolute;
+      top: 35%;
+      left: 25%;
+      width: 50%;
+      height: 10%;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .matrix {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      width: 40%;
+      height: 15%;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Style for the Caesar image container */
+    .caesar-container {
+      position: relative;
+    }
+
+    /* Style for the Caesar image */
+    .caesar-image {
+      object-fit: contain;
+      max-width: 50vw; /* Adjust width relative to viewport width */
+      height: auto;
+    }
+
+    /* Style for the mouth overlay */
+    .mouth-overlay {
+      position: absolute;
+      bottom: 20%; /* Adjust based on the mouth position */
+      left: 25%; /* Adjust based on the mouth position */
+      width: 50%;
+      height: 20%; /* Adjust based on the mouth size */
+      background-image: url('mouth-sprite.png'); /* Replace with your mouth sprite or images */
+      background-size: cover;
+      animation: mouthAnimation 1s infinite; /* Apply animation */
+    }
+
+    /* Keyframes for mouth animation */
+    @keyframes mouthAnimation {
+      0% {
+        background-position: 0 0; /* Closed mouth position */
+      }
+      50% {
+        background-position: -100% 0; /* Open mouth position */
+      }
+      100% {
+        background-position: 0 0; /* Back to closed mouth */
+      }
+    }
+
+    /* Styles for the monkey */
+    .monkey-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px; /* Adjust size */
+      height: 100px; /* Adjust size */
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEIE7Xc43ZiW-AtRamvHS3BSBgksgL6t5yGA&s'); /* Replace with your monkey sprite */
+      background-size: cover;
+      animation: jumpAround 4s infinite; /* Jumping animation */
+    }
+
+    /* Keyframes for monkey jumping around */
+    @keyframes jumpAround {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(100px, -50px);
+      }
+      50% {
+        transform: translate(0, 0);
+      }
+      75% {
+        transform: translate(-100px, -50px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    /* Container for mitochondrion and image */
+    .container {
+      display: flex;
+      align-items: center; /* Align items vertically centered */
+      justify-content: flex-start; /* Align items to the left */
+      flex-wrap: wrap; /* Allow wrapping for responsiveness */
+      position: relative; /* Ensure absolute positioning of monkey works */
+    }
+
+    /* Optional styling for the footer */
+    footer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>200 emoji's</h1>
+    <p>Cluster 1</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="mitochondrion">
+        <div class="outer-membrane"></div>
+        <div class="inner-membrane"></div>
+        <div class="cristae"></div>
+        <div class="matrix"></div>
+      </div>
+      <div class="caesar-container">
+        <img id="caesar-image" src="https://upload.wikimedia.org/wikipedia/en/c/ce/Caesar_Planet_of_the_Apes.jpeg" alt="Caesar from Planet of the Apes" class="caesar-image">
+        <div class="mouth-overlay"></div>
+      </div>
+      <div class="monkey-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Mitochondria</p>
+  </footer>
+</body>
+</html>
