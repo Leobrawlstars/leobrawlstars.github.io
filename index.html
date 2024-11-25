@@ -20,5 +20,33 @@
 <p>🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡👍😤😭💀🤫🤫🤫🤫🤫🧏🏿🧏🏿🧏🏿🧏🏿🧏🏿😏😏😏😏😱😱😱😝😝😝😝😝😝😢😢😢😝😝😝😝😝😝😝🫡🫡🤣🤣🤣🤣🤩🤩🤩🫨🫨🫨🫨🫨🫨🫨😛😛😛😛😛😶‍🌫️😶‍🌫️😶‍🌫️🐺🐺🧏‍♂️🧏‍♂️🧏‍♂️🧏🏿🧏🏿🧏🏿🧏🏿💀💀💩💩💩🤫🤫👍👍😭😭😤😤😞😞😏😏👌🏿👌🏿🔒🔒😱😱😱✅✅✅🦾🦾🦾😾😾😾😾🦮🦮😝😝😝👏👏👏😈😈😈😈😈😈😈😈😈🦮🦮🦮🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🌎🌎🌎🌎🌎🌎🌎🌎⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</p>
 <a href="test.html">Test</a>
 </div>
+
 </body>
 </html>
+<div style="margin-top: 20px; text-align: center;">
+    <h3>Cat Fact</h3>
+    <p id="cat-fact">Loading a random cat fact...</p>
+</div>
+
+<script>
+    // Fetch a random cat fact from the API
+    const apiUrl = "https://catfact.ninja/fact";
+    const catFactElement = document.getElementById("cat-fact");
+
+    async function fetchCatFact() {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status} ${response.statusText}`);
+            }
+            const data = await response.json();
+            catFactElement.textContent = data.fact;
+        } catch (error) {
+            catFactElement.textContent = "Failed to load cat fact. Please try again.";
+            console.error(error);
+        }
+    }
+
+    // Call the function to fetch and display the cat fact
+    fetchCatFact();
+</script>

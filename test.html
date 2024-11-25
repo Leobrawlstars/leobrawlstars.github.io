@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,9 +98,10 @@
 
     /* Styles for the monkey */
     .monkey-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100px; /* Adjust size */
       height: 100px; /* Adjust size */
       background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEIE7Xc43ZiW-AtRamvHS3BSBgksgL6t5yGA&s'); /* Replace with your monkey sprite */
@@ -110,19 +112,19 @@
     /* Keyframes for monkey jumping around */
     @keyframes jumpAround {
       0% {
-        transform: translate(0, 0);
+        transform: translate(-50%, 0);
       }
       25% {
-        transform: translate(100px, -50px);
+        transform: translate(-50%, -50px);
       }
       50% {
-        transform: translate(0, 0);
+        transform: translate(-50%, 0);
       }
       75% {
-        transform: translate(-100px, -50px);
+        transform: translate(-50%, -50px);
       }
       100% {
-        transform: translate(0, 0);
+        transform: translate(-50%, 0);
       }
     }
 
@@ -159,8 +161,8 @@
         <img id="caesar-image" src="https://upload.wikimedia.org/wikipedia/en/c/ce/Caesar_Planet_of_the_Apes.jpeg" alt="Caesar from Planet of the Apes" class="caesar-image">
         <div class="mouth-overlay"></div>
       </div>
-      <div class="monkey-container"></div>
     </div>
+    <div class="monkey-container"></div>
   </main>
 
   <footer>
